@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="alert alert-info">Popular Movies will be Displayed here</p>
+
+    <div class="container" onload="getMovieData()">
+        <div *ngFor="let movie of PopularMovies">
+            <div class="card bg-dark text-center animate-bottom" style="width:230px;">
+                <img src={{ImgLink+movie.poster_path}}  class="card-img-top"  >
+                <div class="card-body">
+                    <h5 class="card-title"> {{movie.original_title}} </h5>
+                    <p><b>Release date</b>: {{movie.Year}} </p>
+                    <button (click)="OnSubmit(movie.original_title,movie.Year,ImgLink+movie.poster_path, movie.id)" class="btn btn-primary btn-sm">Bookmark It</button>
+                </div>
+            </div>
+        </div>
+      </div>
+</body>
+</html>

@@ -22,29 +22,15 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" routerLink="/search">Search Movies</a>
+                <a class="nav-link active" routerLink="/search"><b>Search Movies</b></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" routerLink="/bookmarks">Bookmarked Movies</a>
+                <a class="nav-link active" routerLink="/bookmarks"><b>Bookmarked Movies</b></a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-
-      <div class="container" ng-include="partialViewUrl" onload="getMovieData()">
-        <button (click)="getMovieData()"></button>
-          <div *ngFor="let movie of PopularMovies">
-            <div class="card bg-dark text-center animate-bottom" style="width:230px;">
-                <img src={{ImgLink+movie.poster_path}}  class="card-img-top"  >
-                <div class="card-body">
-                    <h5 class="card-title"> {{movie.original_title}} </h5>
-                    <p><b>Release date</b>: {{movie.Year}} </p>
-                    <button (click)="saveMoviesLocal(movie.Title, movie.Year, movie.Poster, movie.imdbID)" class="btn btn-primary btn-sm">Bookmark It</button>
-                </div>
-            </div>
-        </div>
-      </div>
 
     </div>
 
