@@ -7,18 +7,16 @@
     </form>
 
     <div class="container">
-            <div *ngFor="let movie of Movies">
-                <div class="card bg-dark text-center animate-bottom" style="width:230px;">
-                    <img src={{movie.Poster}}  class="card-img-top"  >
-                    <div class="card-body">
-                        <h5 class="card-title"> {{movie.Title}} </h5>
-                        <!-- <p><b>Director</b>: {{movie.Director}} </p> -->
-                        <p><b>Release date</b>: {{movie.Year}} </p>
-                        <!-- <p><b>Cast</b>: {{cast}}</p> -->
-                        <button class="btn btn-primary btn-sm">Bookmark It</button>
-                    </div>
+        <div *ngFor="let movie of Movies">
+            <div class="card bg-dark text-center animate-bottom" style="width:230px;">
+                <img src={{movie.Poster}}  class="card-img-top"  >
+                <div class="card-body">
+                    <h5 class="card-title"> {{movie.Title}} </h5>
+                    <p><b>Release date</b>: {{movie.Year}} </p>
+                    <button (click)="saveMoviesLocal(movie.Title, movie.Year, movie.Poster, movie.imdbID)" class="btn btn-primary btn-sm">Bookmark It</button>
                 </div>
             </div>
+        </div>
     </div>
 
 </body>

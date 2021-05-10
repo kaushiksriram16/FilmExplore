@@ -1,1 +1,23 @@
-<p>book-mark works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div *ngFor="let movie of Movies">
+        <div class="card bg-dark text-center animate-bottom" style="width:230px;">
+            <img src={{movie.Poster}}  class="card-img-top"  >
+            <div class="card-body">
+                <h5 class="card-title"> {{movie.Title}} </h5>
+                <p><b>Release date</b>: {{movie.Year}} </p>
+                <button (click)="removeBookmarks(movie)" class="btn btn-danger btn-sm">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
