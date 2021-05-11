@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="./app.component.css">
 </head>
 <body>
+
+    <!-- NavBar which will be displayed in every component -->
     <div class="home">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -19,12 +21,15 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
+                <!-- Added routing link which routes to the Home page onclicking Home -->
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
+                <!-- Added routing link which routes to the Search page onclicking Search Movies -->
                 <a class="nav-link active" routerLink="/search"><b>Search Movies</b></a>
               </li>
               <li class="nav-item">
+                <!-- Added routing link which routes to the Bookmarks page onclicking Bookmarked Movies -->
                 <a class="nav-link active" routerLink="/bookmarks"><b>Bookmarked Movies</b></a>
               </li>
             </ul>

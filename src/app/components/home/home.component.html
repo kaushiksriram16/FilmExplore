@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
-    <p class="alert alert-info">Popular Movies will be Displayed here</p>
+
+    <!-- Header for the Home Page -->
+    <div class="header text-center">
+        <h1>Film-Explore</h1>
+        <p><a href="/search">search</a> for the movies you like and bookmark them..</p>
+    </div>
+
+    <h3 class="ph text-center">Recent popular movies</h3>
 
     <div class="container" onload="getMovieData()">
+
+    <!-- Below code takes the Array of Popular movies and displays each movie in the form of a bootstrap card in the container-->
         <div *ngFor="let movie of PopularMovies">
             <div class="card bg-dark text-center animate-bottom" style="width:230px;">
                 <img src={{ImgLink+movie.poster_path}}  class="card-img-top"  >
                 <div class="card-body">
                     <h5 class="card-title"> {{movie.original_title}} </h5>
-                    <p><b>Release date</b>: {{movie.Year}} </p>
-                    <button (click)="OnSubmit(movie.original_title,movie.Year,ImgLink+movie.poster_path, movie.id)" class="btn btn-primary btn-sm">Bookmark It</button>
+                    <p><b>Release date</b>: {{movie.release_date}} </p>
+                    <button (click)="saveMoviesLocal(movie.original_title,movie.release_date,ImgLink+movie.poster_path, movie.id)" class="btn btn-primary btn-sm">Bookmark It</button>
                 </div>
             </div>
         </div>

@@ -7,17 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+
     <div class="container">
-    <div *ngFor="let movie of Movies">
-        <div class="card bg-dark text-center animate-bottom" style="width:230px;">
-            <img src={{movie.Poster}}  class="card-img-top"  >
-            <div class="card-body">
-                <h5 class="card-title"> {{movie.Title}} </h5>
-                <p><b>Release date</b>: {{movie.Year}} </p>
-                <button (click)="removeBookmarks(movie)" class="btn btn-danger btn-sm">Remove</button>
+        <!-- Below code takes the Array of movies and displays each movie in the form of a bootstrap card in the container-->
+        <div *ngFor="let movie of Movies">
+            <div class="card bg-dark text-center animate-bottom" style="width:230px;">
+                <img src={{movie.Poster}}  class="card-img-top"  >
+                <div class="card-body">
+                    <h5 class="card-title"> {{movie.Title}} </h5>
+                    <p><b>Release date</b>: {{movie.Year}} </p>
+                    <!-- Triggers removeBookmarks() function on clicking 'Remove' button below -->
+                    <button (click)="removeBookmarks(movie)" class="btn btn-danger btn-sm">Remove</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 </html>
